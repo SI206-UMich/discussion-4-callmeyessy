@@ -1,7 +1,7 @@
 class Rectangle():
-    # Create the constructor "__init__" method
-    # Arguments: width (an ingeter), height (an integer)
-    # 
+    def __init__ (self, width, height): # Create the constructor "__init__" method
+        self.width = width # Arguments: width (an ingeter), height (an integer)
+        self.height = height                       # 
     # It sets an instance variable, "width" to the passed argument, width
     # It sets an instance variable, "height" to the passed argument, height
 
@@ -9,8 +9,9 @@ class Rectangle():
 
 
 
-    # Create the "__str__" method
-    #
+    def __str__(self):
+       return "A rectangle with width " + str(self.width) + " and height " + str(self.height)# Create the "__str__" method
+        #
     # It returns a string, 
     #       "A rectangle with width ____ and height ____"
 
@@ -18,7 +19,11 @@ class Rectangle():
 
 
 
-    # Create the "verify_input" method
+    def verify_input (self):
+        if self.width and self.height > 0:
+           return True
+        else: 
+           return False # Create the "verify_input" method
     #
     # It returns a boolean
     #       True if the width and height are positive numbers
@@ -27,8 +32,12 @@ class Rectangle():
     # YOUR CODE HERE
 
 
-
-    # Create the "area" method
+    def area (self):
+        if self.verify_input() ==True:
+           return self.width * self.height 
+        else:
+           return "Invalid input"
+        # Create the "area" method
     #
     # It first verifies inputs and return "Invalid input" if they are invalid.
     # Otherwise, it returns the area of the rectangle.
@@ -37,7 +46,13 @@ class Rectangle():
 
 
 
-    # Create the "perimeter" method
+    def perimeter (self):
+        if self.verify_input() == True:
+            return (self.width + self.height) * 2 
+        else:
+            return "Invalid Input" 
+        
+        # Create the "perimeter" method
     #
     # It first verifies inputs and return "Invalid input" if they are invalid.
     # Otherwise, it returns the perimeter of the rectangle.
